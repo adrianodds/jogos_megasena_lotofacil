@@ -20,7 +20,6 @@ def gerar_jogos(mod, quantidade_dezenas, quantidade_jogos, conc, proximo):
     dict_jogos["Valor_Jogos"] = quantidade_jogos * valores(modal(mod),"valores",quantidade_dezenas)
     df_jogos = pd.DataFrame(dict_jogos)
     df_jogos.to_string(f"jogos/{modal(mod)}/"+"jogos_" + modal(mod) + "_" + str(int(conc)+proximo) + ".txt", index=False)
-    proximo_concurso(mod,str(int(conc)+ proximo))
 
 def range_jogos(modalidade):
     if modalidade == "megasena":

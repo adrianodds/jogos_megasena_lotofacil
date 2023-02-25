@@ -6,7 +6,7 @@ while True:
     if modalidade == 3:
         break
     fluxo = func.texto_dash("gerar_conferir",0,0)
-    concurso = func.concurso(modalidade)
+    concurso = int(func.ultimo_concurso(modalidade)+1)
 
     if fluxo == 2:
         print("\nEscolha um dos jogos a seguir para iniciar a conferência:\n")
