@@ -37,3 +37,4 @@ while True:
         quant_jogos = func.texto_dash("quant_jogos", minimo, maximo)
         func.gerar_jogos(modalidade,dezenas,quant_jogos, concurso, 0)
         print(f"\nForam gerados {quant_jogos} jogos na modalidade {func.modal(modalidade).upper()} para o próximo concurso {concurso}, BOA SORTE!\n")
+        input("Pressionar enter para continuar...")
