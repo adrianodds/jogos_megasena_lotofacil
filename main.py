@@ -1,7 +1,9 @@
 import funcoes as func
+import os
 
-print("BEM VINDO!\n")
 while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("\n\nBEM VINDO!\n")
     modalidade = func.texto_dash("modalidade",0,0)
     if modalidade == 3:
         break
@@ -15,8 +17,10 @@ while True:
         for i in lista_jogos:
             print(f"{i} : {lista_jogos[i]}")
         opcao = func.texto_dash("opcao", 1, i)
-        resumo = func.conferencia(lista_jogos[opcao], modalidade) 
-        if len(resumo) == 0:
+        resumo = func.conferencia(lista_jogos[opcao], modalidade)
+        if resumo == 0:
+             input("Pressione enter para continuar\n")
+        elif len(resumo) == 0:
             print("\nNão houveram acertos, desejo mais sorte da próximo vez.\n")
             input("Pressione enter para continuar\n")
         else:

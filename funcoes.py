@@ -54,8 +54,13 @@ def resultado(mod, concurso):
 
 def conferencia(jogo, mod):
     df_jogos = pd.read_fwf((f"jogos/{modal(mod)}/"+jogo))
-    result = resultado(mod, jogo.split("_")[2])
-    numbers_result = [int(number) for number in result]
+    numero_concurso = jogo.split("_")[2].split(".")[0]
+    result = resultado(mod, numero_concurso)
+    try:
+        numbers_result = [int(number) for number in result]
+    except:
+        print(f"\nAinda não ha resultados para o concurso {numero_concurso}.\nTente novamente mais tarde.\n")
+        return 0
     cont = 0
     resumo = {}
     jog = []
